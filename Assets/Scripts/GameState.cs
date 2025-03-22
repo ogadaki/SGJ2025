@@ -23,10 +23,17 @@ public class GameState : MonoBehaviour
 
     void ApplyChoices()
     {
-        scoreNature += Random.Range(-1, 2);
-        scoreTech += Random.Range(-1, 2);
-        scoreSocial += Random.Range(-1, 2);
+        scoreNature += Random.Range(-1, 10);
+        scoreTech += Random.Range(-1, 10);
+        scoreSocial += Random.Range(-1, 10);
         UpdateDebugDisplay();
+    }
+
+    int Score2Level(int score) {
+        if (score <= 2) return 0;
+        if (score <= 4) return 1;
+        if (score <= 5) return 2;
+        return 3;        
     }
 
     void ResetValues()
@@ -44,9 +51,9 @@ public class GameState : MonoBehaviour
     {
         debugText.text = "";
         debugText.text += $"currentStep : {currentStep}\n"
-            + $"scoreNature : {scoreNature}\n"
-            + $"scoreTech : {scoreTech}\n"
-            + $"scoreSocial : {scoreSocial}\n"
+            + $"Nature : {scoreNature} - {Score2Level(scoreNature)}\n"
+            + $"Tech : {scoreTech} - {Score2Level(scoreTech)}\n"
+            + $"Social : {scoreSocial} - {Score2Level(scoreSocial)}\n"
             ;
     }
 }
