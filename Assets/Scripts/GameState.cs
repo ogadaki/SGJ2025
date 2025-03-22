@@ -1,8 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameState : MonoBehaviour
 {
+    [Header("Configuration de textes")]
+    [Tooltip("Nature - messages pour tous les scores")]
+    public List<string> natureMessages = new List<string>();
+    [Tooltip("Tech - messages pour tous les scores")]
+    public List<string> techMessages = new List<string>();
+    [Tooltip("Social - messages pour tous les scores")]
+    public List<string> socialMessages = new List<string>();
     [SerializeField] private TextMeshProUGUI debugText;
     public static int currentStep = 0;
 

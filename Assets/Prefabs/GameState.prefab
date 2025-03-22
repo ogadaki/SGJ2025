@@ -45,6 +45,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d322b331ed7ff304997a570d5a273a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  natureMessages:
+  - nat 0.A
+  - nat 0.B
+  - nat 0.C
+  - nat 1.A
+  - nat 1.B
+  - nat 2.A
+  - nat 3.A
+  - nat 3.B
+  techMessages:
+  - tec 0.1
+  - tec 0.B
+  - tec 0.C
+  - tec 1.A
+  - tec 1.B
+  - tec 2.A
+  - tec 3.A
+  - tec 3.B
+  socialMessages:
+  - soc 0.A
+  - soc 0.B
+  - soc 0.C
+  - soc 1.A
+  - soc 1.B
+  - soc 2.A
+  - soc 3.A
+  - soc 3.B
   debugText: {fileID: 4233302958154134841}
 --- !u!1 &5732752460354548376
 GameObject:
