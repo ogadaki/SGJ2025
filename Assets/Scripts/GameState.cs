@@ -22,7 +22,8 @@ public class GameState : MonoBehaviour
     [SerializeField] private TextMeshProUGUI debugText;
     public static int currentStep = 0;
 
-    public gestionnaireMarqueur gestionnairePlante;
+    
+    public gestionnaireMarqueur[] gestionnaireObjetsTemoins;
 
     public  int scoreNature = 0;
     public  int scoreTech = 0;
@@ -40,7 +41,9 @@ public class GameState : MonoBehaviour
     {
         if(nouvelleEtape){
             nouvelleEtape = false;
-            this.gestionnairePlante.checkChangementEtat(this.GetNatureLevel());
+            foreach(gestionnaireMarqueur objetTemoin in gestionnaireObjetsTemoins){
+                objetTemoin.checkChangementEtat(this.GetNatureLevel());
+            }
         }
     }
 
@@ -48,6 +51,15 @@ public class GameState : MonoBehaviour
     {
         currentStep++;
         UpdateDebugDisplay();
+    }
+
+    public void avancerEtape(int incrNature, int incrTech, int incrSocial){
+        currentStep++;
+        this.UpdateScores(incrNature, incrTech, incrSocial);
+        foreach(gestionnaireMarqueur objetTemoin in gestionnaireObjetsTemoins)
+        {
+                objetTemoin.checkChangementEtat(this.GetNatureLevel());
+        }
     }
 
     public void UpdateScores(int incrNature, int incrTech, int incrSocial)
@@ -68,6 +80,10 @@ public class GameState : MonoBehaviour
     }
 
     int Score2Level(int score) {
+        if(score < 0){
+            currentStep = 6;
+            return 0;
+        }
         if (score <= 2) return 0;
         if (score <= 4) return 1;
         if (score <= 5) return 2;
@@ -140,5 +156,9 @@ public class GameState : MonoBehaviour
                 + $"\n{GetSocialMessage()}\n\n"
                 ;
         }
+    }
+
+    public int getCurrentStep(){
+        return currentStep;
     }
 }
