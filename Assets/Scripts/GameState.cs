@@ -4,6 +4,7 @@ using TMPro;
 
 public class GameState : MonoBehaviour
 {
+    public const int nMessages = 8;
     [Header("Configuration de textes")]
     [Tooltip("Nature - messages pour tous les scores")]
     public List<string> natureMessages = new List<string>();
@@ -59,6 +60,26 @@ public class GameState : MonoBehaviour
         return Score2Level(scoreSocial);
     }
 
+    int ClampScore(int score)
+    {
+        return Mathf.Clamp(score, 0, nMessages - 1);
+    }
+
+    string GetNatureMessage()
+    {
+        return natureMessages[ClampScore(scoreNature)];
+    }
+
+    string GetTechMessage()
+    {
+        return techMessages[ClampScore(scoreTech)];
+    }
+
+    string GetSocialMessage()
+    {
+        return natureMessages[ClampScore(scoreSocial)];
+    }
+
     void ResetValues()
     {
         currentStep = 0;
@@ -74,9 +95,9 @@ public class GameState : MonoBehaviour
     {
         debugText.text = "";
         debugText.text += $"currentStep : {currentStep}\n"
-            + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
-            + $"Tech : {scoreTech} - {GetTechLevel()}\n"
-            + $"Social : {scoreSocial} - {GetSocialLevel()}\n"
+            + $"Nature : {scoreNature} - {GetNatureLevel()} - {GetNatureMessage()}\n"
+            + $"Tech : {scoreTech} - {GetTechLevel()} - {GetTechMessage()}\n"
+            + $"Social : {scoreSocial} - {GetSocialLevel()} - {GetSocialMessage()}\n"
             ;
     }
 }
