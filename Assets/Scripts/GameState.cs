@@ -13,6 +13,7 @@ public class GameState : MonoBehaviour
     void Start()
     {
         ResetValues();
+        ApplyChoices();
     }
 
     void Update()
@@ -20,13 +21,21 @@ public class GameState : MonoBehaviour
         
     }
 
+    void ApplyChoices()
+    {
+        scoreNature += Random.Range(-1, 2);
+        scoreTech += Random.Range(-1, 2);
+        scoreSocial += Random.Range(-1, 2);
+        UpdateDebugDisplay();
+    }
+
     void ResetValues()
     {
         currentStep = 0;
 
         scoreNature = 0;
-        scoreTech = 2;
-        scoreSocial = 5;
+        scoreTech = 0;
+        scoreSocial = 0;
 
         UpdateDebugDisplay();
     }
