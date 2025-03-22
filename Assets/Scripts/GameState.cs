@@ -118,7 +118,7 @@ public class GameState : MonoBehaviour
     void UpdateDebugDisplay()
     {
         if (debug) {
-            debugText.text = "<size=60%>";
+            debugText.text = "Info de debug\n\n<size=60%>";
             debugText.text += $"currentStep : {currentStep}\n"
                 + $"\n"
                 + $"Nature : {scoreNature} - {GetNatureLevel()}\n"

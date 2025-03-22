@@ -1265,6 +1265,76 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: techMessages.Array.data[3].content
+      value: "Les capteurs d\u2019eau, d\u2019oxyg\xE8ne, de la faune/flore sont
+        bien param\xE9tr\xE9s."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: techMessages.Array.data[4].content
+      value: "De nouveaux syst\xE8mes d\u2019ing\xE9nierie se perfectionnent dans
+        le Cosmosymbiosis. \r\nMise en place et maintient d\u2019un r\xE9seau d\u2019objets
+        connect\xE9s dans l\u2019ensemble du vaisseau. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: techMessages.Array.data[5].content
+      value: "Recherche d\u2019implantations de nanopuces pour am\xE9liorer les capacit\xE9s
+        m\xE9morielles.\r\nRecherche d\u2019hybridation avec l\u2019IA.\r\n\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: techMessages.Array.data[6].content
+      value: "Syst\xE8me d\u2019intelligence artificielle qui a pris conscience d\u2019elle
+        m\xEAme et qui compl\xE8te l\u2019humain dans ses d\xE9cisions. Elle pilote
+        partiellement le vaisseau.\r\n\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: techMessages.Array.data[7].content
+      value: "Les humains se sont compl\xE8tement hybrid\xE9s avec l\u2019IA.\r\nElle
+        pilote enti\xE8rement le vaisseau."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[0].content
+      value: "L\u2019infirmerie est satur\xE9e d\xFB aux bagarres quotidienne entre
+        les habitants.\r\nLes habitants ont cess\xE9 d\u2019entretenir le vaisseaux,
+        chacun s\u2019assure d\u2019avoir le plus de ressources pour lui."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[1].content
+      value: "Il n\u2019y a pas de confiance entre les habitants du vaisseau. Un
+        individualisme g\xE9n\xE9ral est pr\xE9sent. \r\nL\u2019infirmerie commence
+        \xE0 \xEAtre satur\xE9e."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[2].content
+      value: "Les tensions s\u2019accumulent. L\u2019ambiance au sein du vaisseau
+        est tendu et les gens ne s\u2019entraide pas. Les gens commence \xE0 remettre
+        en question les actions les autres corp de m\xE9tier. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[3].content
+      value: "Les leaders de chaque corp de m\xE9tier sont bien int\xE9gr\xE9 et
+        respect\xE9 par ses \xE9quipes."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[4].content
+      value: "Une communication entre les corps de m\xE9tier est observ\xE9."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[5].content
+      value: Les gens vont naturellement les uns vers les autres. Partagent leurs
+        ressources et passent du temps ensemble.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[6].content
+      value: "Le vaisseau s\u2019auto g\xE8re sans aucune friction. Une confiance
+        g\xE9n\xE9rale r\xE8gne et rend les \xE9changes fluide et agr\xE9able."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: socialMessages.Array.data[7].content
+      value: "Une empathie totale s\u2019est d\xE9velopp\xE9e. Les corp de m\xE9tier
+        se m\xE9lange et s\u2019entraide en permanence de bon c\u0153ur.\r\nSymbiose
+        et cohabitation totale."
+      objectReference: {fileID: 0}
     - target: {fileID: 1585108719559152787, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: m_Name
       value: GameState
@@ -1308,6 +1378,10 @@ PrefabInstance:
     - target: {fileID: 1808682739628580522, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957438254075894357, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: m_Name
+      value: DebugCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
