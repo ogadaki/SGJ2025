@@ -4,10 +4,11 @@ using TMPro;
 public class GameState : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI debugText;
-    public static const int nStep = 5;
     public static int currentStep = 0;
-    public static int[] scores = new int[3] { 0, 0, 0 };
 
+    public static int scoreNature = 0;
+    public static int scoreTech = 0;
+    public static int scoreSocial = 0;
 
     void Start()
     {
@@ -22,7 +23,11 @@ public class GameState : MonoBehaviour
     void ResetValues()
     {
         currentStep = 0;
-        scores = new int[3] { 0, 0, 0 };
+
+        scoreNature = 0;
+        scoreTech = 2;
+        scoreSocial = 5;
+
         UpdateDebugDisplay();
     }
 
@@ -30,9 +35,9 @@ public class GameState : MonoBehaviour
     {
         debugText.text = "";
         debugText.text += $"currentStep : {currentStep}\n"
-            + $"scores[0] : {scores[0]}\n"
-            + $"scores[1] : {scores[1]}\n"
-            + $"scores[2] : {scores[2]}\n"
+            + $"scoreNature : {scoreNature}\n"
+            + $"scoreTech : {scoreTech}\n"
+            + $"scoreSocial : {scoreSocial}\n"
             ;
     }
 }
