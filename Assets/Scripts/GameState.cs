@@ -4,8 +4,9 @@ using TMPro;
 public class GameState : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI debugText;
-    public static int currentStep;
+    public static int currentLevel;
     public static int[] scores = new int[3] { 0, 0, 0 };
+
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class GameState : MonoBehaviour
 
     void ResetValues()
     {
-        currentStep = 0;
+        currentLevel = 0;
         scores = new int[3] { 0, 0, 0 };
         UpdateDebugDisplay();
     }
@@ -27,7 +28,7 @@ public class GameState : MonoBehaviour
     void UpdateDebugDisplay()
     {
         debugText.text =
-            $"current step : {currentStep}\n"
+            $"current level : {currentLevel}\n"
             + $"scores[0] : {scores[0]}\n"
             + $"scores[1] : {scores[1]}\n"
             + $"scores[2] : {scores[2]}\n"
