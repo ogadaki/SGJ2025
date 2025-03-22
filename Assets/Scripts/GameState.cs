@@ -34,11 +34,6 @@ public class GameState : MonoBehaviour
     void Start()
     {
         ResetValues();
-        if (debug) {
-            UpdateScores();
-            NextStep();
-            NextStep();
-        }
     }
 
     void Update()
@@ -124,9 +119,9 @@ public class GameState : MonoBehaviour
     {
         currentStep = 0;
 
-        scoreNature = 0;
-        scoreTech = 0;
-        scoreSocial = 0;
+        scoreNature = 3;
+        scoreTech = 3;
+        scoreSocial = 3;
 
         UpdateDebugDisplay();
     }

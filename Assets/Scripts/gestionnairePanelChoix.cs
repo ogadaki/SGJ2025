@@ -1,8 +1,10 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gestionnairePanelChoix : MonoBehaviour
 {
+    public GameState gameState;
     public GameObject panelChoix1;
     public GameObject panelChoix2;
     public GameObject panelChoix3;
@@ -102,5 +104,35 @@ public class gestionnairePanelChoix : MonoBehaviour
         //Mettre le label de la question
         //Mettre les labels des choix
         //Mettre les score des choix dans le gestionnaire toggle
+    }
+
+    void UpdateIncrements(choixDeMedia choix, ref int incrNature, ref int incrTech, ref int incrSocial)
+    {
+        Toggle toggle = choix.GetComponent<Toggle>();
+        if (toggle.isOn) {
+            incrNature += choix.ajoutScoreNature;
+            incrTech += choix.ajoutScoreTechno;
+            incrSocial += choix.ajoutScoreSocial;
+        }
+    }
+    public void ValidateChoices()
+    {
+        int incrNature = -1;
+        int incrTech = -1;
+        int incrSocial = -1;
+
+        UpdateIncrements(demande1Toggle1, ref incrNature, ref incrTech, ref incrSocial);
+        UpdateIncrements(demande1Toggle2, ref incrNature, ref incrTech, ref incrSocial);
+        UpdateIncrements(demande1Toggle3, ref incrNature, ref incrTech, ref incrSocial);
+
+        UpdateIncrements(demande2Toggle1, ref incrNature, ref incrTech, ref incrSocial);
+        UpdateIncrements(demande2Toggle2, ref incrNature, ref incrTech, ref incrSocial);
+        UpdateIncrements(demande2Toggle3, ref incrNature, ref incrTech, ref incrSocial);
+
+        UpdateIncrements(demande3Toggle1, ref incrNature, ref incrTech, ref incrSocial);
+        UpdateIncrements(demande3Toggle2, ref incrNature, ref incrTech, ref incrSocial);
+        UpdateIncrements(demande3Toggle3, ref incrNature, ref incrTech, ref incrSocial);
+
+        gameState.UpdateScores(incrNature, incrTech, incrSocial);
     }
 }
