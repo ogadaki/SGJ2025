@@ -1,16 +1,36 @@
 using UnityEngine;
+using TMPro;
 
 public class GameState : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private TextMeshProUGUI debugText;
+    public static int currentStep;
+    public static int[] scores = new int[3] { 0, 0, 0 };
+
     void Start()
+    {
+        ResetValues();
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void ResetValues()
     {
-        
+        currentStep = 0;
+        scores = new int[3] { 0, 0, 0 };
+        UpdateDebugDisplay();
+    }
+
+    void UpdateDebugDisplay()
+    {
+        debugText.text =
+            $"current step : {currentStep}\n"
+            + $"scores[0] : {scores[0]}\n"
+            + $"scores[1] : {scores[1]}\n"
+            + $"scores[2] : {scores[2]}\n"
+            ;
     }
 }
