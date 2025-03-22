@@ -36,6 +36,21 @@ public class GameState : MonoBehaviour
         return 3;        
     }
 
+    int GetNatureLevel()
+    {
+        return Score2Level(scoreNature);
+    }
+
+    int GetTechLevel()
+    {
+        return Score2Level(scoreTech);
+    }
+
+    int GetSocialLevel()
+    {
+        return Score2Level(scoreSocial);
+    }
+
     void ResetValues()
     {
         currentStep = 0;
@@ -51,9 +66,9 @@ public class GameState : MonoBehaviour
     {
         debugText.text = "";
         debugText.text += $"currentStep : {currentStep}\n"
-            + $"Nature : {scoreNature} - {Score2Level(scoreNature)}\n"
-            + $"Tech : {scoreTech} - {Score2Level(scoreTech)}\n"
-            + $"Social : {scoreSocial} - {Score2Level(scoreSocial)}\n"
+            + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
+            + $"Tech : {scoreTech} - {GetTechLevel()}\n"
+            + $"Social : {scoreSocial} - {GetSocialLevel()}\n"
             ;
     }
 }
