@@ -31,7 +31,7 @@ public class GameState : MonoBehaviour
     {
         ResetValues();
         if (debug) {
-            ApplyChoices();
+            UpdateScores();
             NextStep();
             NextStep();
         }
@@ -48,12 +48,21 @@ public class GameState : MonoBehaviour
         UpdateDebugDisplay();
     }
 
-    void ApplyChoices()
+    void UpdateScores(int incrNature, int incrTech, int incrSocial)
     {
-        scoreNature += UnityEngine.Random.Range(-1, 10);
-        scoreTech += UnityEngine.Random.Range(-1, 10);
-        scoreSocial += UnityEngine.Random.Range(-1, 10);
+        scoreNature += incrNature;
+        scoreTech += incrTech;
+        scoreSocial += incrSocial;
         UpdateDebugDisplay();
+    }
+
+    void UpdateScores()
+    {
+        UpdateScores(
+            UnityEngine.Random.Range(-1, 10),
+            UnityEngine.Random.Range(-1, 10),
+            UnityEngine.Random.Range(-1, 10)
+        );
     }
 
     int Score2Level(int score) {
