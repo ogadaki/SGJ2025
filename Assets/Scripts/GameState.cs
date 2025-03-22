@@ -18,16 +18,27 @@ public class GameState : MonoBehaviour
     public static int scoreNature = 0;
     public static int scoreTech = 0;
     public static int scoreSocial = 0;
+    public static bool debug = false;
 
     void Start()
     {
         ResetValues();
-        ApplyChoices();
+        if (debug) {
+            ApplyChoices();
+            NextStep();
+            NextStep();
+        }
     }
 
     void Update()
     {
         
+    }
+
+    void NextStep()
+    {
+        currentStep++;
+        UpdateDebugDisplay();
     }
 
     void ApplyChoices()
@@ -93,11 +104,13 @@ public class GameState : MonoBehaviour
 
     void UpdateDebugDisplay()
     {
-        debugText.text = "";
-        debugText.text += $"currentStep : {currentStep}\n"
-            + $"Nature : {scoreNature} - {GetNatureLevel()} - {GetNatureMessage()}\n"
-            + $"Tech : {scoreTech} - {GetTechLevel()} - {GetTechMessage()}\n"
-            + $"Social : {scoreSocial} - {GetSocialLevel()} - {GetSocialMessage()}\n"
-            ;
+        if (debug) {
+            debugText.text = "";
+            debugText.text += $"currentStep : {currentStep}\n"
+                + $"Nature : {scoreNature} - {GetNatureLevel()} - {GetNatureMessage()}\n"
+                + $"Tech : {scoreTech} - {GetTechLevel()} - {GetTechMessage()}\n"
+                + $"Social : {scoreSocial} - {GetSocialLevel()} - {GetSocialMessage()}\n"
+                ;
+        }
     }
 }
