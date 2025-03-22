@@ -50,9 +50,9 @@ public class GameState : MonoBehaviour
 
     void ApplyChoices()
     {
-        // scoreNature += UnityEngine.Random.Range(-1, 10);
-        // scoreTech += UnityEngine.Random.Range(-1, 10);
-        // scoreSocial += UnityEngine.Random.Range(-1, 10);
+        scoreNature += UnityEngine.Random.Range(-1, 10);
+        scoreTech += UnityEngine.Random.Range(-1, 10);
+        scoreSocial += UnityEngine.Random.Range(-1, 10);
         UpdateDebugDisplay();
     }
 
@@ -83,19 +83,25 @@ public class GameState : MonoBehaviour
         return Mathf.Clamp(score, 0, nMessages - 1);
     }
 
+    string MessageFromScore(TextEntry[] messages, int score)
+    {
+        string message = messages[ClampScore(score)].content;
+        return string.IsNullOrEmpty(message) ? $"message pour le score {score}" : message;
+    }
+
     string GetNatureMessage()
     {
-        return natureMessages[ClampScore(scoreNature)].content;
+        return MessageFromScore(natureMessages, scoreNature);
     }
 
     string GetTechMessage()
     {
-        return techMessages[ClampScore(scoreTech)].content;
+        return MessageFromScore(techMessages, scoreTech);
     }
 
     string GetSocialMessage()
     {
-        return socialMessages[ClampScore(scoreSocial)].content;
+        return MessageFromScore(socialMessages, scoreSocial);
     }
 
     void ResetValues()
