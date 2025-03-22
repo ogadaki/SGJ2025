@@ -46,32 +46,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   natureMessages:
-  - nat 0.A
-  - nat 0.B
-  - nat 0.C
-  - nat 1.A
-  - nat 1.B
-  - nat 2.A
-  - nat 3.A
-  - nat 3.B
+  - content: "Extinction massive des vivant \xE0 bord du vaisseau. \r\n\r\nLa Solastalgie
+      (d\xE9pression d\xFB \xE0 la d\xE9gradation de l\u2019environnement) \xE0 atteint
+      tous l\u2019\xE9quipage du vaisseau.\r\n\r\nOn ne trouve plus que de l\u2019eau
+      croupi et toxique."
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
   techMessages:
-  - tec 0.1
-  - tec 0.B
-  - tec 0.C
-  - tec 1.A
-  - tec 1.B
-  - tec 2.A
-  - tec 3.A
-  - tec 3.B
+  - content: "Il n\u2019y a presque plus d\u2019\xE9lectricit\xE9 dans le vaisseau.
+      Tous les outils de gestion sont hors service. Plus de lumi\xE8re, de gestion
+      de direction, de suivit d\u2019oxyg\xE8ne ni de \r\nSyst\xE8me de communication.\r\n\r\n"
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
   socialMessages:
-  - soc 0.A
-  - soc 0.B
-  - soc 0.C
-  - soc 1.A
-  - soc 1.B
-  - soc 2.A
-  - soc 3.A
-  - soc 3.B
+  - content: "L\u2019infirmerie est satur\xE9e d\xFB aux bagarres quotidienne entre
+      les habitants. Les habitants ont cess\xE9 d\u2019entretenir le vaisseaux, chacun
+      s\u2019assure d\u2019avoir le plus de ressources pour lui."
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
+  - content: 
   debugText: {fileID: 4233302958154134841}
 --- !u!1 &5732752460354548376
 GameObject:
@@ -108,7 +115,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 200}
+  m_SizeDelta: {x: 900, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5665925396155562846
 CanvasRenderer:
@@ -227,7 +234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4454529132556641345
 RectTransform:
   m_ObjectHideFlags: 0

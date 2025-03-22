@@ -1,24 +1,31 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameState : MonoBehaviour
 {
+    [Serializable]
+    public class TextEntry
+    {        
+        [TextArea(3, 10)]
+        public string content;
+    }
     public const int nMessages = 8;
     [Header("Configuration de textes")]
     [Tooltip("Nature - messages pour tous les scores")]
-    public List<string> natureMessages = new List<string>();
+    public TextEntry[] natureMessages;
     [Tooltip("Tech - messages pour tous les scores")]
-    public List<string> techMessages = new List<string>();
+    public TextEntry[] techMessages;
     [Tooltip("Social - messages pour tous les scores")]
-    public List<string> socialMessages = new List<string>();
+    public TextEntry[] socialMessages;
     [SerializeField] private TextMeshProUGUI debugText;
     public static int currentStep = 0;
 
     public static int scoreNature = 0;
     public static int scoreTech = 0;
     public static int scoreSocial = 0;
-    public static bool debug = false;
+    public static bool debug = true;
 
     void Start()
     {
@@ -43,9 +50,9 @@ public class GameState : MonoBehaviour
 
     void ApplyChoices()
     {
-        scoreNature += Random.Range(-1, 10);
-        scoreTech += Random.Range(-1, 10);
-        scoreSocial += Random.Range(-1, 10);
+        // scoreNature += UnityEngine.Random.Range(-1, 10);
+        // scoreTech += UnityEngine.Random.Range(-1, 10);
+        // scoreSocial += UnityEngine.Random.Range(-1, 10);
         UpdateDebugDisplay();
     }
 
@@ -78,17 +85,17 @@ public class GameState : MonoBehaviour
 
     string GetNatureMessage()
     {
-        return natureMessages[ClampScore(scoreNature)];
+        return natureMessages[ClampScore(scoreNature)].content;
     }
 
     string GetTechMessage()
     {
-        return techMessages[ClampScore(scoreTech)];
+        return techMessages[ClampScore(scoreTech)].content;
     }
 
     string GetSocialMessage()
     {
-        return natureMessages[ClampScore(scoreSocial)];
+        return socialMessages[ClampScore(scoreSocial)].content;
     }
 
     void ResetValues()
@@ -105,11 +112,15 @@ public class GameState : MonoBehaviour
     void UpdateDebugDisplay()
     {
         if (debug) {
-            debugText.text = "";
+            debugText.text = "<size=60%>";
             debugText.text += $"currentStep : {currentStep}\n"
-                + $"Nature : {scoreNature} - {GetNatureLevel()} - {GetNatureMessage()}\n"
-                + $"Tech : {scoreTech} - {GetTechLevel()} - {GetTechMessage()}\n"
-                + $"Social : {scoreSocial} - {GetSocialLevel()} - {GetSocialMessage()}\n"
+                + $"\n"
+                + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
+                + $"{GetNatureMessage()}\n\n"
+                + $"Tech : {scoreTech} - {GetTechLevel()}"
+                + $"\n{GetTechMessage()}\n\n"
+                + $"Social : {scoreSocial} - {GetSocialLevel()}"
+                + $"\n{GetSocialMessage()}\n\n"
                 ;
         }
     }
