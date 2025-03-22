@@ -1266,6 +1266,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: gestionnairePlante
+      value: 
+      objectReference: {fileID: 1878747603}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: techMessages.Array.data[3].content
       value: "Les capteurs d\u2019eau, d\u2019oxyg\xE8ne, de la faune/flore sont
         bien param\xE9tr\xE9s."
@@ -1334,6 +1338,18 @@ PrefabInstance:
       value: "Une empathie totale s\u2019est d\xE9velopp\xE9e. Les corp de m\xE9tier
         se m\xE9lange et s\u2019entraide en permanence de bon c\u0153ur.\r\nSymbiose
         et cohabitation totale."
+      objectReference: {fileID: 0}
+    - target: {fileID: 562071187191530640, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 562071187191530640, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 562071187191530640, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 1585108719559152787, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: m_Name
@@ -1497,6 +1513,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e772d4e95af85148bef6071ebc1e97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1878747602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878747604}
+  - component: {fileID: 1878747603}
+  m_Layer: 0
+  m_Name: marqueur_niveau_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1878747603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878747602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2797e065b530dc4b8c79467b8001bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsEtat:
+  - {fileID: 8498447404710928975, guid: c774d0790bd1199438a808de10c49942, type: 3}
+  - {fileID: 4985762735677407342, guid: f788bb8676d2e7145ad24cbd232fc2ba, type: 3}
+  - {fileID: 7421020906004209098, guid: 7e1d18733a8b0f74a9278aeb183a0b93, type: 3}
+  - {fileID: 3263847875936407375, guid: d55e4c484e58ce94fb466cdda62e4eb0, type: 3}
+  levelMoinsUn: 0
+  levelUn: 1
+  levelDeux: 2
+  levelTrois: 3
+--- !u!4 &1878747604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878747602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.29, y: 1.84, z: 3.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1887334004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,3 +1831,4 @@ SceneRoots:
   - {fileID: 2072381653}
   - {fileID: 1605671210}
   - {fileID: 2018184780}
+  - {fileID: 1878747604}

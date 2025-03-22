@@ -22,10 +22,14 @@ public class GameState : MonoBehaviour
     [SerializeField] private TextMeshProUGUI debugText;
     public static int currentStep = 0;
 
-    public static int scoreNature = 0;
-    public static int scoreTech = 0;
-    public static int scoreSocial = 0;
-    public static bool debug = true;
+    public gestionnaireMarqueur gestionnairePlante;
+
+    public  int scoreNature = 0;
+    public  int scoreTech = 0;
+    public  int scoreSocial = 0;
+    public  bool debug = true;
+
+    public bool nouvelleEtape;
 
     void Start()
     {
@@ -39,7 +43,10 @@ public class GameState : MonoBehaviour
 
     void Update()
     {
-        
+        if(nouvelleEtape){
+            nouvelleEtape = false;
+            this.gestionnairePlante.checkChangementEtat(this.GetNatureLevel());
+        }
     }
 
     void NextStep()
@@ -48,7 +55,7 @@ public class GameState : MonoBehaviour
         UpdateDebugDisplay();
     }
 
-    void UpdateScores(int incrNature, int incrTech, int incrSocial)
+    public void UpdateScores(int incrNature, int incrTech, int incrSocial)
     {
         scoreNature += incrNature;
         scoreTech += incrTech;
@@ -56,7 +63,7 @@ public class GameState : MonoBehaviour
         UpdateDebugDisplay();
     }
 
-    void UpdateScores()
+    public void UpdateScores()
     {
         UpdateScores(
             UnityEngine.Random.Range(-1, 10),
