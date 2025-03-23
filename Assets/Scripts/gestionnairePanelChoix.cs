@@ -47,7 +47,7 @@ public class gestionnairePanelChoix : MonoBehaviour
 
     public void CallNextQuestion(){
         //Verifier quelle etape on est
-        switch(numeroEtape){
+        switch(gameState.getCurrentStep()){
             case 1:
                 demande1.text = this.dicoQuestion.questionsEtape1[0].demande;
                 demande2.text = this.dicoQuestion.questionsEtape1[1].demande;
@@ -134,5 +134,7 @@ public class gestionnairePanelChoix : MonoBehaviour
         UpdateIncrements(demande3Toggle3, ref incrNature, ref incrTech, ref incrSocial);
 
         gameState.UpdateScores(incrNature, incrTech, incrSocial);
+        gameState.avancerEtape();
+        //gameState.UpdateScores(incrNature, incrTech, incrSocial);
     }
 }

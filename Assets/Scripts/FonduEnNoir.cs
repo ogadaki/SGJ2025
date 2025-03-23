@@ -4,10 +4,10 @@ using System.Collections;
 
 public class FonduEnNoir : MonoBehaviour
 {
-    // Durée du fondu
+    // Durï¿½e du fondu
     public float fadeDuration = 1f; 
     private Image panelImage;
-
+    public GameState gameState;
     void Start()
     {
         panelImage = GetComponent<Image>();
@@ -16,23 +16,23 @@ public class FonduEnNoir : MonoBehaviour
 
     public void FadeToBlack()
     {
-        // De transparent à noir
+        // De transparent ï¿½ noir
 
         StartCoroutine(Fade(0f, 1f)); 
     }
 
     public void FadeFromBlack()
     {
-        // De noir à transparent
+        // De noir ï¿½ transparent
         StartCoroutine(Fade(1f, 0f)); 
     }
 
     /// <summary>
-    /// A appeler pour la transition après la validation des choix du joueur.
+    /// A appeler pour la transition aprï¿½s la validation des choix du joueur.
     /// </summary>
     public void FadeToBlackThenFromBlack()
     {
-        // De transparent à noir, à transparent
+        // De transparent ï¿½ noir, ï¿½ transparent
         StartCoroutine(FadeThenUnfade(0f, 1f));
     }
 
@@ -51,8 +51,12 @@ public class FonduEnNoir : MonoBehaviour
 
         color.a = targetAlpha;
         panelImage.color = color;
-        // On attend quelques secondes avec l'écran noir.
+        // On attend quelques secondes avec l'ï¿½cran noir.
         yield return new WaitForSeconds(2f);
+        foreach(gestionnaireMarqueur objetTemoin in gameState.gestionnaireObjetsTemoins)
+        {
+                objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
+        }
         FadeFromBlack();
     }
 
@@ -68,7 +72,6 @@ public class FonduEnNoir : MonoBehaviour
             panelImage.color = color;
             yield return null;
         }
-
         color.a = targetAlpha;
         panelImage.color = color;
     }

@@ -20,10 +20,12 @@ public class GameState : MonoBehaviour
     [Tooltip("Social - messages pour tous les scores")]
     public TextEntry[] socialMessages;
     [SerializeField] private TextMeshProUGUI debugText;
-    public static int currentStep = 0;
+    public int currentStep = 1;
 
     
     public gestionnaireMarqueur[] gestionnaireObjetsTemoins;
+
+    public FonduEnNoir panelFondu;
 
     public  int scoreNature = 0;
     public  int scoreTech = 0;
@@ -53,13 +55,13 @@ public class GameState : MonoBehaviour
         UpdateDebugDisplay();
     }
 
-    public void avancerEtape(int incrNature, int incrTech, int incrSocial){
+    public void avancerEtape(){
         currentStep++;
-        this.UpdateScores(incrNature, incrTech, incrSocial);
-        foreach(gestionnaireMarqueur objetTemoin in gestionnaireObjetsTemoins)
-        {
-                objetTemoin.checkChangementEtat(this.GetNatureLevel());
-        }
+        this.panelFondu.FadeToBlackThenFromBlack();
+        // -------- En fait ces appels doivent etre fait dans le fade pour pas qu'on voit le changement avant le noir
+        // appel de fonction de remplacement des differents texte de questions et choix
+        // appel de remplacement / concat du texte de log
+        // appel de fonctiond d'avancement sur la "ligne du temps"
     }
 
     public void UpdateScores(int incrNature, int incrTech, int incrSocial)
@@ -90,7 +92,7 @@ public class GameState : MonoBehaviour
         return 3;        
     }
 
-    int GetNatureLevel()
+    public int GetNatureLevel()
     {
         return Score2Level(scoreNature);
     }
@@ -133,7 +135,7 @@ public class GameState : MonoBehaviour
 
     void ResetValues()
     {
-        currentStep = 0;
+        currentStep = 1;
 
         scoreNature = 3;
         scoreTech = 3;
