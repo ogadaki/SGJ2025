@@ -36,6 +36,12 @@ public class GameState : MonoBehaviour
 
     public FonduEnNoir panelFondu;
 
+    public dictionnaireQuestions dicoQuestions;
+
+    public GameObject panelQuestions;
+    public GameObject panelConsigne;
+    public GameObject panelLogs;
+
     public  int scoreNature = 0;
     public  int scoreTech = 0;
     public  int scoreSocial = 0;
@@ -73,10 +79,18 @@ public class GameState : MonoBehaviour
         // appel de fonctiond d'avancement sur la "ligne du temps"
     }
 
+    public void avancerEtapeRestart(){
+        currentStep++;
+        this.panelFondu.FadeToBlackThenFromBlackRestart();
+    }
+
     public void lancerGameOver(){
         if(currentStep >= 6){
             //this.panelFondu.FadeToBlackThenFromBlack();
             this.activerGameOver();
+            this.panelConsigne.SetActive(false);
+            this.panelLogs.SetActive(false);
+            this.panelQuestions.SetActive(false);
             this.panelFin.SetActive(true);
         }
     }
@@ -158,6 +172,16 @@ public class GameState : MonoBehaviour
         scoreSocial = 3;
 
         UpdateDebugDisplay();
+    }
+
+    public void resetGame(){
+        currentStep = 0;
+        scoreNature = 3;
+        scoreTech = 3;
+        scoreSocial = 3;
+        UpdateDebugDisplay();
+        this.panelFin.SetActive(false);
+        avancerEtapeRestart();
     }
 
     void UpdateDebugDisplay()

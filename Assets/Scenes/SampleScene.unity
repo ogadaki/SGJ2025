@@ -129,7 +129,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 373185377440619801, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
   m_PrefabInstance: {fileID: 1496261383}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 248509187}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ef1213e333ea4439f14d6603d4320f, type: 3}
@@ -318,6 +318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &248509187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8735467881041444780, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
+  m_PrefabInstance: {fileID: 1496261383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &293966980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1035,34 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 977451088}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: resetGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameState, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373581117472455016, guid: 20004546677fb984a819881c97107ac3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5410542510743917005, guid: 20004546677fb984a819881c97107ac3, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -1487,6 +1520,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e772d4e95af85148bef6071ebc1e97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1552164293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5732752460354548376, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+  m_PrefabInstance: {fileID: 1605671210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1596541393 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7474270450482373207, guid: 20004546677fb984a819881c97107ac3, type: 3}
@@ -1510,13 +1548,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1596541393}
     - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: panelLogs
+      value: 
+      objectReference: {fileID: 1552164293}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: panelFondu
       value: 
       objectReference: {fileID: 504088006}
     - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: dicoQuestions
+      value: 
+      objectReference: {fileID: 2018184779}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: gameOverBravo
       value: "Pour le moment, vous imaginez un monde meilleur et vous l'avez cr\xE9\xE9"
       objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: panelConsigne
+      value: 
+      objectReference: {fileID: 1644456160}
     - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: gameOverNature
       value: "Tout est plastique et carbone, les feuilles ont fan\xE9es, comme vos
@@ -1531,6 +1581,10 @@ PrefabInstance:
       propertyPath: gameOverTechno
       value: "Vous ne savez m\xEAme plus changer une ampoule"
       objectReference: {fileID: 0}
+    - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: panelQuestions
+      value: 
+      objectReference: {fileID: 248509187}
     - target: {fileID: 8765551441755812, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
       propertyPath: raisonGameOver
       value: 
@@ -1686,6 +1740,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+--- !u!1 &1644456160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8198285153466074414, guid: 119ea521476a12d4bb0fa25b45802f1c, type: 3}
+  m_PrefabInstance: {fileID: 823299025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1667444019 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3331113969061325581, guid: 20004546677fb984a819881c97107ac3, type: 3}
