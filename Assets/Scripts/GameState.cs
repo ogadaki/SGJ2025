@@ -48,6 +48,7 @@ public class GameState : MonoBehaviour
     public  int scoreTech = 0;
     public  int scoreSocial = 0;
     public  bool debug = true;
+    public bool scoresUnchanged = false;
 
     public bool nouvelleEtape;
 
@@ -101,9 +102,24 @@ public class GameState : MonoBehaviour
     }
     public void UpdateScores(int incrNature, int incrTech, int incrSocial)
     {
+        int previousScoreNature = scoreNature;
+        int previousScoreTech = scoreTech;
+        int previousScoreSocial = scoreSocial;
+
         scoreNature += incrNature;
         scoreTech += incrTech;
         scoreSocial += incrSocial;
+
+        if (
+            scoreNature == previousScoreNature
+            && scoreTech == previousScoreTech
+            && scoreSocial == previousScoreSocial
+        ) {
+            scoresUnchanged = true;
+        } else {
+            scoresUnchanged = false;
+        }
+
         UpdateDebugDisplay();
     }
 
@@ -194,6 +210,8 @@ public class GameState : MonoBehaviour
         if (debug) {
             debugText.text = "Info de debug\n\n<size=60%>";
             debugText.text += $"currentStep : {currentStep}\n"
+                + $"\n"
+                + $"scoresUnchanged {scoresUnchanged}\n"
                 + $"\n"
                 + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
                 + $"{GetNatureMessage()}\n\n"
