@@ -79,6 +79,7 @@ public class GameState : MonoBehaviour
     public gestionnaireSons sonsSociaux;
     public gestionnaireSons sonsTechno;
     public gestionnaireSonsNature sonsNature;
+    public GameObject panelSouris;
 
     void Start()
     {
@@ -119,6 +120,9 @@ public class GameState : MonoBehaviour
         /*if(currentStep >1){
             this.panelLogs.SetActive(true);
         }*/
+        if(currentStep>1){
+            this.panelSouris.SetActive(false);
+        }
         if(currentStep >= 6){
             //this.panelFondu.FadeToBlackThenFromBlack();
             this.activerGameOver();

@@ -109,6 +109,7 @@ public class FonduEnNoir : MonoBehaviour
         gameState.UpdateLogs();
         gameState.UpdateVaisseau();
         gameState.activerSons();
+        this.gameState.panelSouris.SetActive(true);
         FadeFromBlack();
     }
 
