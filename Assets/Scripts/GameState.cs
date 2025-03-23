@@ -54,6 +54,10 @@ public class GameState : MonoBehaviour
 
     public bool panelsVisible;
 
+    public gestionnaireSons sonsSociaux;
+    public gestionnaireSons sonsTechno;
+    public gestionnaireSons sonsNature;
+
     void Start()
     {
         ResetValues();
@@ -266,5 +270,11 @@ public class GameState : MonoBehaviour
             gameOver += gameOverTechno;
         }
         this.raisonGameOver.text = gameOver;
+    }
+
+    public void activerSons(){
+        this.sonsSociaux.activerSourceSon(this.Score2Level(this.scoreSocial));
+        /*this.sonsNature.activerSourceSon(this.Score2Level(this.scoreNature));
+        this.sonsTechno.activerSourceSon(this.Score2Level(this.scoreTech));*/
     }
 }
