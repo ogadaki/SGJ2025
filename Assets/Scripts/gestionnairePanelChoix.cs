@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class gestionnairePanelChoix : MonoBehaviour
 {
     public GameState gameState;
+    public Button validateButton;
     public GameObject panelChoix1;
     public GameObject panelChoix2;
     public GameObject panelChoix3;
@@ -33,10 +34,62 @@ public class gestionnairePanelChoix : MonoBehaviour
 
     public dictionnaireQuestions dicoQuestion;
     public int numeroEtape;
+
+    void ChangeValidateButtonOnToggleChange(choixDeMedia choix)
+    {
+        Toggle toggle = choix.GetComponent<Toggle>();
+        toggle.onValueChanged.AddListener((isOn) => CheckValidateButtonState());
+    }
+
+    bool toggleIsOn(choixDeMedia choix)
+    {
+        Toggle toggle = choix.GetComponent<Toggle>();
+        return toggle.isOn;
+    }
+
+    void CheckValidateButtonState()
+    {
+        if (
+            (
+                toggleIsOn(demande1Toggle1)
+                || toggleIsOn(demande1Toggle2)
+                || toggleIsOn(demande1Toggle3)
+            )
+            &&
+            (
+                toggleIsOn(demande2Toggle1)
+                || toggleIsOn(demande2Toggle2)
+                || toggleIsOn(demande2Toggle3)
+            )
+            &&
+            (
+                toggleIsOn(demande3Toggle1)
+                || toggleIsOn(demande3Toggle2)
+                || toggleIsOn(demande3Toggle3)
+            )
+        ) {
+            Debug.Log("display go button");
+            validateButton.interactable = true;
+        } else {
+            Debug.Log("hide go button");
+            validateButton.interactable = false;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        ChangeValidateButtonOnToggleChange(demande1Toggle1);
+        ChangeValidateButtonOnToggleChange(demande1Toggle2);
+        ChangeValidateButtonOnToggleChange(demande1Toggle3);
+
+        ChangeValidateButtonOnToggleChange(demande2Toggle1);
+        ChangeValidateButtonOnToggleChange(demande2Toggle2);
+        ChangeValidateButtonOnToggleChange(demande2Toggle3);
+
+        ChangeValidateButtonOnToggleChange(demande3Toggle1);
+        ChangeValidateButtonOnToggleChange(demande3Toggle2);
+        ChangeValidateButtonOnToggleChange(demande3Toggle3);
     }
 
     // Update is called once per frame

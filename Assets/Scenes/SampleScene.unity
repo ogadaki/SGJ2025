@@ -1244,6 +1244,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2116014927}
     - target: {fileID: 373185377440619801, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
+      propertyPath: validateButton
+      value: 
+      objectReference: {fileID: 2026875539}
+    - target: {fileID: 373185377440619801, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
       propertyPath: demande1Toggle1
       value: 
       objectReference: {fileID: 1805389289}
@@ -2214,6 +2218,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026875539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5612140051887734881, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
+  m_PrefabInstance: {fileID: 1496261383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2038292666
 PrefabInstance:
   m_ObjectHideFlags: 0
