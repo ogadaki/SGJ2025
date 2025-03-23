@@ -46,61 +46,54 @@ public class gestionnairePanelChoix : MonoBehaviour
     }
 
     public void CallNextQuestion(){
-        //Verifier quelle etape on est
-        switch(gameState.getCurrentStep()){
-            case 1:
-                demande1.text = this.dicoQuestion.questionsEtape1[0].demande;
-                demande2.text = this.dicoQuestion.questionsEtape1[1].demande;
-                demande3.text = this.dicoQuestion.questionsEtape1[2].demande;
-                demande1Choix1.text = this.dicoQuestion.questionsEtape1[0].choix[0].texte;
-                this.demande1Toggle1.ajoutScoreNature = this.dicoQuestion.questionsEtape1[0].choix[0].scoreNature;
-                this.demande1Toggle1.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[0].choix[0].scoreScience;
-                this.demande1Toggle1.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[0].choix[0].scoreSocial;
+        demande1.text = this.dicoQuestion.currentQuestions[0].demande;
+        demande2.text = this.dicoQuestion.currentQuestions[1].demande;
+        demande3.text = this.dicoQuestion.currentQuestions[2].demande;
+        demande1Choix1.text = this.dicoQuestion.currentQuestions[0].choix[0].texte;
+        this.demande1Toggle1.ajoutScoreNature = this.dicoQuestion.currentQuestions[0].choix[0].scoreNature;
+        this.demande1Toggle1.ajoutScoreTechno = this.dicoQuestion.currentQuestions[0].choix[0].scoreScience;
+        this.demande1Toggle1.ajoutScoreSocial = this.dicoQuestion.currentQuestions[0].choix[0].scoreSocial;
 
-                demande1Choix2.text = this.dicoQuestion.questionsEtape1[0].choix[1].texte;
-                this.demande1Toggle2.ajoutScoreNature = this.dicoQuestion.questionsEtape1[0].choix[1].scoreNature;
-                this.demande1Toggle2.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[0].choix[1].scoreScience;
-                this.demande1Toggle2.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[0].choix[1].scoreSocial;
+        demande1Choix2.text = this.dicoQuestion.currentQuestions[0].choix[1].texte;
+        this.demande1Toggle2.ajoutScoreNature = this.dicoQuestion.currentQuestions[0].choix[1].scoreNature;
+        this.demande1Toggle2.ajoutScoreTechno = this.dicoQuestion.currentQuestions[0].choix[1].scoreScience;
+        this.demande1Toggle2.ajoutScoreSocial = this.dicoQuestion.currentQuestions[0].choix[1].scoreSocial;
 
-                demande1Choix3.text = this.dicoQuestion.questionsEtape1[0].choix[2].texte;
-                this.demande1Toggle3.ajoutScoreNature = this.dicoQuestion.questionsEtape1[0].choix[2].scoreNature;
-                this.demande1Toggle3.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[0].choix[2].scoreScience;
-                this.demande1Toggle3.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[0].choix[2].scoreSocial;
-                
-                demande2Choix1.text = this.dicoQuestion.questionsEtape1[1].choix[0].texte;
-                this.demande2Toggle1.ajoutScoreNature = this.dicoQuestion.questionsEtape1[1].choix[0].scoreNature;
-                this.demande2Toggle1.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[1].choix[0].scoreScience;
-                this.demande2Toggle1.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[1].choix[0].scoreSocial;
-                
-                demande2Choix2.text = this.dicoQuestion.questionsEtape1[1].choix[1].texte;
-                this.demande2Toggle2.ajoutScoreNature = this.dicoQuestion.questionsEtape1[1].choix[1].scoreNature;
-                this.demande2Toggle2.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[1].choix[1].scoreScience;
-                this.demande2Toggle2.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[1].choix[1].scoreSocial;
+        demande1Choix3.text = this.dicoQuestion.currentQuestions[0].choix[2].texte;
+        this.demande1Toggle3.ajoutScoreNature = this.dicoQuestion.currentQuestions[0].choix[2].scoreNature;
+        this.demande1Toggle3.ajoutScoreTechno = this.dicoQuestion.currentQuestions[0].choix[2].scoreScience;
+        this.demande1Toggle3.ajoutScoreSocial = this.dicoQuestion.currentQuestions[0].choix[2].scoreSocial;
+        
+        demande2Choix1.text = this.dicoQuestion.currentQuestions[1].choix[0].texte;
+        this.demande2Toggle1.ajoutScoreNature = this.dicoQuestion.currentQuestions[1].choix[0].scoreNature;
+        this.demande2Toggle1.ajoutScoreTechno = this.dicoQuestion.currentQuestions[1].choix[0].scoreScience;
+        this.demande2Toggle1.ajoutScoreSocial = this.dicoQuestion.currentQuestions[1].choix[0].scoreSocial;
+        
+        demande2Choix2.text = this.dicoQuestion.currentQuestions[1].choix[1].texte;
+        this.demande2Toggle2.ajoutScoreNature = this.dicoQuestion.currentQuestions[1].choix[1].scoreNature;
+        this.demande2Toggle2.ajoutScoreTechno = this.dicoQuestion.currentQuestions[1].choix[1].scoreScience;
+        this.demande2Toggle2.ajoutScoreSocial = this.dicoQuestion.currentQuestions[1].choix[1].scoreSocial;
 
-                demande2Choix3.text = this.dicoQuestion.questionsEtape1[1].choix[2].texte;
-                this.demande2Toggle3.ajoutScoreNature = this.dicoQuestion.questionsEtape1[1].choix[2].scoreNature;
-                this.demande2Toggle3.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[1].choix[2].scoreScience;
-                this.demande2Toggle3.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[1].choix[2].scoreSocial;
+        demande2Choix3.text = this.dicoQuestion.currentQuestions[1].choix[2].texte;
+        this.demande2Toggle3.ajoutScoreNature = this.dicoQuestion.currentQuestions[1].choix[2].scoreNature;
+        this.demande2Toggle3.ajoutScoreTechno = this.dicoQuestion.currentQuestions[1].choix[2].scoreScience;
+        this.demande2Toggle3.ajoutScoreSocial = this.dicoQuestion.currentQuestions[1].choix[2].scoreSocial;
 
-                demande3Choix1.text = this.dicoQuestion.questionsEtape1[2].choix[0].texte;
-                this.demande3Toggle1.ajoutScoreNature = this.dicoQuestion.questionsEtape1[2].choix[0].scoreNature;
-                this.demande3Toggle1.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[2].choix[0].scoreScience;
-                this.demande3Toggle1.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[2].choix[0].scoreSocial;
-                
-                demande3Choix2.text = this.dicoQuestion.questionsEtape1[2].choix[1].texte;
-                this.demande3Toggle2.ajoutScoreNature = this.dicoQuestion.questionsEtape1[2].choix[1].scoreNature;
-                this.demande3Toggle2.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[2].choix[1].scoreScience;
-                this.demande3Toggle2.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[2].choix[1].scoreSocial;
+        demande3Choix1.text = this.dicoQuestion.currentQuestions[2].choix[0].texte;
+        this.demande3Toggle1.ajoutScoreNature = this.dicoQuestion.currentQuestions[2].choix[0].scoreNature;
+        this.demande3Toggle1.ajoutScoreTechno = this.dicoQuestion.currentQuestions[2].choix[0].scoreScience;
+        this.demande3Toggle1.ajoutScoreSocial = this.dicoQuestion.currentQuestions[2].choix[0].scoreSocial;
+        
+        demande3Choix2.text = this.dicoQuestion.currentQuestions[2].choix[1].texte;
+        this.demande3Toggle2.ajoutScoreNature = this.dicoQuestion.currentQuestions[2].choix[1].scoreNature;
+        this.demande3Toggle2.ajoutScoreTechno = this.dicoQuestion.currentQuestions[2].choix[1].scoreScience;
+        this.demande3Toggle2.ajoutScoreSocial = this.dicoQuestion.currentQuestions[2].choix[1].scoreSocial;
 
-                demande3Choix3.text = this.dicoQuestion.questionsEtape1[2].choix[2].texte;
-                this.demande3Toggle3.ajoutScoreNature = this.dicoQuestion.questionsEtape1[2].choix[2].scoreNature;
-                this.demande3Toggle3.ajoutScoreTechno = this.dicoQuestion.questionsEtape1[2].choix[2].scoreScience;
-                this.demande3Toggle3.ajoutScoreSocial = this.dicoQuestion.questionsEtape1[2].choix[2].scoreSocial;
-                break;
-            default:
-                break;
+        demande3Choix3.text = this.dicoQuestion.currentQuestions[2].choix[2].texte;
+        this.demande3Toggle3.ajoutScoreNature = this.dicoQuestion.currentQuestions[2].choix[2].scoreNature;
+        this.demande3Toggle3.ajoutScoreTechno = this.dicoQuestion.currentQuestions[2].choix[2].scoreScience;
+        this.demande3Toggle3.ajoutScoreSocial = this.dicoQuestion.currentQuestions[2].choix[2].scoreSocial;
 
-        }
         //Mettre le label de la question
         //Mettre les labels des choix
         //Mettre les score des choix dans le gestionnaire toggle
@@ -115,6 +108,28 @@ public class gestionnairePanelChoix : MonoBehaviour
             incrSocial += choix.ajoutScoreSocial;
         }
     }
+
+    void UncheckToggle(choixDeMedia choix)
+    {
+        Toggle toggle = choix.GetComponent<Toggle>();
+        toggle.isOn = false;
+    }
+
+    void UncheckAllToggles()
+    {
+        UncheckToggle(demande1Toggle1);
+        UncheckToggle(demande1Toggle2);
+        UncheckToggle(demande1Toggle3);
+
+        UncheckToggle(demande2Toggle1);
+        UncheckToggle(demande2Toggle2);
+        UncheckToggle(demande2Toggle3);
+
+        UncheckToggle(demande3Toggle1);
+        UncheckToggle(demande3Toggle2);
+        UncheckToggle(demande3Toggle3);
+    }
+
     public void ValidateChoices()
     {
         int incrNature = -1;
@@ -134,7 +149,8 @@ public class gestionnairePanelChoix : MonoBehaviour
         UpdateIncrements(demande3Toggle3, ref incrNature, ref incrTech, ref incrSocial);
 
         gameState.UpdateScores(incrNature, incrTech, incrSocial);
+        UncheckAllToggles();
         gameState.avancerEtape();
-        //gameState.UpdateScores(incrNature, incrTech, incrSocial);
+        dicoQuestion.GenerateNewQuestions();
     }
 }
