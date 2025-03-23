@@ -43,6 +43,10 @@ public class FonduEnNoir : MonoBehaviour
 
     IEnumerator FadeThenUnfade(float startAlpha, float targetAlpha)
     {
+        gameState.panelLogs.SetActive(false);
+        gameState.panelQuestions.SetActive(false);
+        this.gameState.panelsVisible = false;
+        Cursor.visible = false;
         float elapsedTime = 0f;
         Color color = panelImage.color;
 
@@ -72,9 +76,14 @@ public class FonduEnNoir : MonoBehaviour
 
     IEnumerator FadeThenUnfadeRestart(float startAlpha, float targetAlpha)
     {
+        
         float elapsedTime = 0f;
         Color color = panelImage.color;
-
+        this.gameState.panelConsigne.SetActive(true);
+        this.gameState.panelLogs.SetActive(false);
+        this.gameState.panelQuestions.SetActive(false);
+        this.gameState.panelsVisible = false;
+        Cursor.visible = false;
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -96,9 +105,6 @@ public class FonduEnNoir : MonoBehaviour
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
         gameState.UpdateLogs();
-        this.gameState.panelConsigne.SetActive(true);
-        this.gameState.panelLogs.SetActive(false);
-        this.gameState.panelQuestions.SetActive(true);
         FadeFromBlack();
     }
 

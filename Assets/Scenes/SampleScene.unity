@@ -1373,6 +1373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel_choix 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8735467881041444780, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8899716243170210596, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}
       propertyPath: ajoutScoreNature
       value: 0
@@ -1626,6 +1630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6957438254075894357, guid: 39b7aba97273edb47aafcf5421a7354d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1716,6 +1724,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   cursorLocked: 1
+  gameState: {fileID: 977451088}
 --- !u!114 &1702131594 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8899716243170210596, guid: d60ec1e04bac8504e8c80715a1be4ddb, type: 3}

@@ -52,6 +52,8 @@ public class GameState : MonoBehaviour
 
     public bool nouvelleEtape;
 
+    public bool panelsVisible;
+
     void Start()
     {
         ResetValues();
@@ -88,9 +90,9 @@ public class GameState : MonoBehaviour
     }
 
     public void lancerGameOver(){
-        if(currentStep >1){
+        /*if(currentStep >1){
             this.panelLogs.SetActive(true);
-        }
+        }*/
         if(currentStep >= 6){
             //this.panelFondu.FadeToBlackThenFromBlack();
             this.activerGameOver();
