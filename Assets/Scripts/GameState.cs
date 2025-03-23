@@ -264,12 +264,9 @@ public class GameState : MonoBehaviour
         this.texteLogs.text = 
             $"\n"
                 + $"{impactMessage}\n\n"
-                + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
-                + $"{GetNatureMessage()}\n\n"
-                + $"Tech : {scoreTech} - {GetTechLevel()}"
-                + $"\n{GetTechMessage()}\n\n"
-                + $"Social : {scoreSocial} - {GetSocialLevel()}"
-                + $"\n{GetSocialMessage()}\n\n"
+                + $"<color=#66BB6A>{GetNatureMessage()}</color>\n\n"
+                + $"\n<color=#4FC3F7>{GetTechMessage()}</color>\n\n"
+                + $"\n<color=#C75B5B>{GetSocialMessage()}</color>\n\n"
                 ;
     }
 
