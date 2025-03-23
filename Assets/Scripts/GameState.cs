@@ -226,8 +226,14 @@ public class GameState : MonoBehaviour
     }
 
     public void UpdateLogs(){
+        string impactMessage = (
+            scoresUnchanged ?
+            "Vos choix de récits n'ont pas eu d'impact sur l'évolution!" :
+            "Voici l'impact de vos choix de récits :"
+        );
         this.texteLogs.text = 
             $"\n"
+                + $"{impactMessage}\n\n"
                 + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
                 + $"{GetNatureMessage()}\n\n"
                 + $"Tech : {scoreTech} - {GetTechLevel()}"
