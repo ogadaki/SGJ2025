@@ -70,6 +70,7 @@ public class FonduEnNoir : MonoBehaviour
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
         gameState.UpdateLogs();
+        gameState.UpdateVaisseau();
         gameState.activerSons();
         gameState.lancerGameOver();
         FadeFromBlack();
@@ -106,6 +107,7 @@ public class FonduEnNoir : MonoBehaviour
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
         gameState.UpdateLogs();
+        gameState.UpdateVaisseau();
         gameState.activerSons();
         FadeFromBlack();
     }

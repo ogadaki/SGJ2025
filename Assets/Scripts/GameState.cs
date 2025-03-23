@@ -10,6 +10,28 @@ public class GameState : MonoBehaviour
     public string gameOverNature;
     public string gameOverBravo;
 
+    public GameObject Fond_Step_1;
+    public GameObject Fond_Step_2;
+    public GameObject Fond_Step_3;
+    public GameObject Fond_Step_4;
+    public GameObject Fond_Step_5;
+    public GameObject Fond_Step_6_FINAL;
+
+    public GameObject Nature_Niveau_0;
+    public GameObject Nature_Niveau_1;
+    public GameObject Nature_Niveau_2;
+    public GameObject Nature_Niveau_3;
+
+    public GameObject Techno_Niveau_0;
+    public GameObject Techno_Niveau_1;
+    public GameObject Techno_Niveau_2;
+    public GameObject Techno_Niveau_3;
+
+    public GameObject Social_Niveau_0;
+    public GameObject Social_Niveau_1;
+    public GameObject Social_Niveau_2;
+    public GameObject Social_Niveau_3;
+
     public GameObject panelGameOverRate;
     public TextMeshProUGUI raisonGameOver;
     [Serializable]
@@ -245,6 +267,33 @@ public class GameState : MonoBehaviour
                 + $"Social : {scoreSocial} - {GetSocialLevel()}"
                 + $"\n{GetSocialMessage()}\n\n"
                 ;
+    }
+
+    public void UpdateVaisseau()
+    {
+        Debug.Log("UpdateVaisseau");
+
+        Fond_Step_1.SetActive(currentStep == 1);
+        Fond_Step_2.SetActive(currentStep == 2);
+        Fond_Step_3.SetActive(currentStep == 3);
+        Fond_Step_4.SetActive(currentStep == 4);
+        Fond_Step_5.SetActive(currentStep == 5);
+        Fond_Step_6_FINAL.SetActive(currentStep == 6);
+
+        Nature_Niveau_0.SetActive(GetNatureLevel() == 0);
+        Nature_Niveau_1.SetActive(GetNatureLevel() == 1);
+        Nature_Niveau_2.SetActive(GetNatureLevel() == 2);
+        Nature_Niveau_3.SetActive(GetNatureLevel() == 3);
+
+        Techno_Niveau_0.SetActive(GetTechLevel() == 0);
+        Techno_Niveau_1.SetActive(GetTechLevel() == 1);
+        Techno_Niveau_2.SetActive(GetTechLevel() == 2);
+        Techno_Niveau_3.SetActive(GetTechLevel() == 3);
+
+        Social_Niveau_0.SetActive(GetSocialLevel() == 0);
+        Social_Niveau_1.SetActive(GetSocialLevel() == 1);
+        Social_Niveau_2.SetActive(GetSocialLevel() == 2);
+        Social_Niveau_3.SetActive(GetSocialLevel() == 3);
     }
 
     public int getCurrentStep(){
