@@ -1382,6 +1382,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 323143099300381450, guid: f272316238b4ddc4d80599b1da5d1b89, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1036876358596530950, guid: f272316238b4ddc4d80599b1da5d1b89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.93
@@ -1422,9 +1426,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1466708986753132089, guid: f272316238b4ddc4d80599b1da5d1b89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7273555455841465308, guid: f272316238b4ddc4d80599b1da5d1b89, type: 3}
       propertyPath: m_Name
       value: Vaisseau
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292642322511161299, guid: f272316238b4ddc4d80599b1da5d1b89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
