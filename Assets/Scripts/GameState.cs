@@ -47,7 +47,7 @@ public class GameState : MonoBehaviour
     public  int scoreNature = 0;
     public  int scoreTech = 0;
     public  int scoreSocial = 0;
-    public  bool debug = true;
+    public  bool debug = false;
     public bool scoresUnchanged = false;
 
     public bool nouvelleEtape;
