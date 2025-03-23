@@ -1273,6 +1273,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Update_Emilien
       objectReference: {fileID: 0}
+    - target: {fileID: 2204088242476110110, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204088242476110110, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3299184390869828582, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: gameState
       value: 
