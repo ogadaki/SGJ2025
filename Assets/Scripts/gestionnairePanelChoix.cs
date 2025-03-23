@@ -149,8 +149,13 @@ public class gestionnairePanelChoix : MonoBehaviour
         UpdateIncrements(demande3Toggle3, ref incrNature, ref incrTech, ref incrSocial);
 
         gameState.UpdateScores(incrNature, incrTech, incrSocial);
-        UncheckAllToggles();
         gameState.avancerEtape();
-        dicoQuestion.GenerateNewQuestions();
+    }
+    public void DisplayNextStep()
+    {
+        UncheckAllToggles();
+        if (gameState.currentStep <= 5) {
+            dicoQuestion.GenerateNewQuestions();
+        }
     }
 }

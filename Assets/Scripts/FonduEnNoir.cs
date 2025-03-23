@@ -8,6 +8,7 @@ public class FonduEnNoir : MonoBehaviour
     public float fadeDuration = 1f; 
     private Image panelImage;
     public GameState gameState;
+    public gestionnairePanelChoix panelChoix;
     void Start()
     {
         panelImage = GetComponent<Image>();
@@ -51,6 +52,9 @@ public class FonduEnNoir : MonoBehaviour
 
         color.a = targetAlpha;
         panelImage.color = color;
+
+        panelChoix.DisplayNextStep();
+
         // On attend quelques secondes avec l'�cran noir.
         yield return new WaitForSeconds(2f);
         foreach(gestionnaireMarqueur objetTemoin in gameState.gestionnaireObjetsTemoins)
