@@ -56,7 +56,7 @@ public class GameState : MonoBehaviour
 
     public gestionnaireSons sonsSociaux;
     public gestionnaireSons sonsTechno;
-    public gestionnaireSons sonsNature;
+    public gestionnaireSonsNature sonsNature;
 
     void Start()
     {
@@ -274,6 +274,7 @@ public class GameState : MonoBehaviour
 
     public void activerSons(){
         this.sonsSociaux.activerSourceSon(this.Score2Level(this.scoreSocial));
+        this.sonsNature.activerSourceSon(this.Score2Level(this.scoreNature));
         /*this.sonsNature.activerSourceSon(this.Score2Level(this.scoreNature));
         this.sonsTechno.activerSourceSon(this.Score2Level(this.scoreTech));*/
     }

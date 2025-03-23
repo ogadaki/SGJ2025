@@ -106,6 +106,7 @@ public class FonduEnNoir : MonoBehaviour
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
         gameState.UpdateLogs();
+        gameState.activerSons();
         FadeFromBlack();
     }
 

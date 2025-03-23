@@ -15,6 +15,8 @@ public class mouseController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
     public GameState gameState;
+    public AudioSource ouvertureMenu;
+    public AudioSource fermetureMenu;
 
     void Start()
     {
@@ -41,10 +43,12 @@ public class mouseController : MonoBehaviour
                 if(gameState.currentStep<=1){
                     this.gameState.panelQuestions.SetActive(true);
                     this.gameState.panelLogs.SetActive(false);
+                    ouvertureMenu.Play();
                 }
                 else if(gameState.currentStep > 1 && gameState.currentStep <= 6){
                     this.gameState.panelQuestions.SetActive(true);
                     this.gameState.panelLogs.SetActive(true);
+                    ouvertureMenu.Play();
                 }
                 else{
                     this.gameState.panelQuestions.SetActive(false);
@@ -61,10 +65,12 @@ public class mouseController : MonoBehaviour
                 if(gameState.currentStep<=1){
                     this.gameState.panelQuestions.SetActive(false);
                     this.gameState.panelLogs.SetActive(false);
+                    fermetureMenu.Play();
                 }
                 else if(gameState.currentStep > 1 && gameState.currentStep <= 6){
                     this.gameState.panelQuestions.SetActive(false);
                     this.gameState.panelLogs.SetActive(false);
+                    fermetureMenu.Play();
                 }
                 else{
                     this.gameState.panelQuestions.SetActive(false);
