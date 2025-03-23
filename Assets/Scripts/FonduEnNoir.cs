@@ -57,6 +57,7 @@ public class FonduEnNoir : MonoBehaviour
         {
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
+        gameState.lancerGameOver();
         FadeFromBlack();
     }
 

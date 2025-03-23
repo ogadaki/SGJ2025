@@ -5,6 +5,13 @@ using TMPro;
 
 public class GameState : MonoBehaviour
 {
+    public string gameOverSocial;
+    public string gameOverTechno;
+    public string gameOverNature;
+    public string gameOverBravo;
+
+    public GameObject panelGameOverRate;
+    public TextMeshProUGUI raisonGameOver;
     [Serializable]
     public class TextEntry
     {        
@@ -21,6 +28,8 @@ public class GameState : MonoBehaviour
     public TextEntry[] socialMessages;
     [SerializeField] private TextMeshProUGUI debugText;
     public int currentStep = 1;
+
+    public GameObject panelFin;
 
     
     public gestionnaireMarqueur[] gestionnaireObjetsTemoins;
@@ -41,12 +50,12 @@ public class GameState : MonoBehaviour
 
     void Update()
     {
-        if(nouvelleEtape){
+        /*if(nouvelleEtape){
             nouvelleEtape = false;
             foreach(gestionnaireMarqueur objetTemoin in gestionnaireObjetsTemoins){
                 objetTemoin.checkChangementEtat(this.GetNatureLevel());
             }
-        }
+        }*/
     }
 
     void NextStep()
@@ -64,6 +73,13 @@ public class GameState : MonoBehaviour
         // appel de fonctiond d'avancement sur la "ligne du temps"
     }
 
+    public void lancerGameOver(){
+        if(currentStep >= 6){
+            //this.panelFondu.FadeToBlackThenFromBlack();
+            this.activerGameOver();
+            this.panelFin.SetActive(true);
+        }
+    }
     public void UpdateScores(int incrNature, int incrTech, int incrSocial)
     {
         scoreNature += incrNature;
@@ -162,5 +178,26 @@ public class GameState : MonoBehaviour
 
     public int getCurrentStep(){
         return currentStep;
+    }
+
+    public void activerGameOver(){
+        string gameOver = gameOverBravo;
+        if(this.scoreNature<0 || this.scoreSocial<0 || this.scoreTech<0){
+            gameOver = "";
+            this.panelGameOverRate.SetActive(true);
+        }
+        else{
+            this.panelGameOverRate.SetActive(false);
+        }
+        if(this.scoreNature<0){
+            gameOver += gameOverNature;
+        }
+        if(this.scoreSocial<0){
+            gameOver += gameOverSocial;
+        }
+        if(this.scoreTech < 0){
+            gameOver += gameOverTechno;
+        }
+        this.raisonGameOver.text = gameOver;
     }
 }
