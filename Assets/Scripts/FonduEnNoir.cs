@@ -65,6 +65,7 @@ public class FonduEnNoir : MonoBehaviour
         {
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
+        gameState.UpdateLogs();
         gameState.lancerGameOver();
         FadeFromBlack();
     }
@@ -94,8 +95,9 @@ public class FonduEnNoir : MonoBehaviour
         {
                 objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
+        gameState.UpdateLogs();
         this.gameState.panelConsigne.SetActive(true);
-        this.gameState.panelLogs.SetActive(true);
+        this.gameState.panelLogs.SetActive(false);
         this.gameState.panelQuestions.SetActive(true);
         FadeFromBlack();
     }

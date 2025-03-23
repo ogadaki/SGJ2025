@@ -27,6 +27,8 @@ public class GameState : MonoBehaviour
     [Tooltip("Social - messages pour tous les scores")]
     public TextEntry[] socialMessages;
     [SerializeField] private TextMeshProUGUI debugText;
+
+    public TextMeshProUGUI texteLogs;
     public int currentStep = 1;
 
     public GameObject panelFin;
@@ -85,6 +87,9 @@ public class GameState : MonoBehaviour
     }
 
     public void lancerGameOver(){
+        if(currentStep >1){
+            this.panelLogs.SetActive(true);
+        }
         if(currentStep >= 6){
             //this.panelFondu.FadeToBlackThenFromBlack();
             this.activerGameOver();
@@ -198,6 +203,18 @@ public class GameState : MonoBehaviour
                 + $"\n{GetSocialMessage()}\n\n"
                 ;
         }
+    }
+
+    public void UpdateLogs(){
+        this.texteLogs.text = 
+            $"\n"
+                + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
+                + $"{GetNatureMessage()}\n\n"
+                + $"Tech : {scoreTech} - {GetTechLevel()}"
+                + $"\n{GetTechMessage()}\n\n"
+                + $"Social : {scoreSocial} - {GetSocialLevel()}"
+                + $"\n{GetSocialMessage()}\n\n"
+                ;
     }
 
     public int getCurrentStep(){
