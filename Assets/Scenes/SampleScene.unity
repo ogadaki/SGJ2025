@@ -1273,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Update_Emilien
       objectReference: {fileID: 0}
+    - target: {fileID: 2076631789515398328, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2204088242476110110, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: m_fontSize
       value: 25
@@ -1280,6 +1284,10 @@ PrefabInstance:
     - target: {fileID: 2204088242476110110, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: m_fontSizeBase
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3274948623832588193, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -27.704834
       objectReference: {fileID: 0}
     - target: {fileID: 3299184390869828582, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: gameState
@@ -1293,6 +1301,22 @@ PrefabInstance:
       propertyPath: validateButton
       value: 
       objectReference: {fileID: 2135927416}
+    - target: {fileID: 3472317889011121295, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 231.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472317889011121295, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.820587
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472317889011121295, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -556.85223
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246163719669038300, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.650879
+      objectReference: {fileID: 0}
     - target: {fileID: 4294805537677515480, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1373,6 +1397,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4348827290615210141, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4709032087339105725, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: gameState
       value: 
@@ -1385,16 +1413,56 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: resetGame
       objectReference: {fileID: 0}
+    - target: {fileID: 6446417294717590109, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446417294717590109, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631181490501962357, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631181490501962357, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796848943141109777, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 583.7027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796848943141109777, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -206.88773
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008482230420770514, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 214.85
+      objectReference: {fileID: 0}
     - target: {fileID: 8187811959911575890, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
       propertyPath: m_text
       value: "Notre esp\xE8ce humaine poss\xE8de une capacit\xE9 unique\u202F: produire
-        des fictions collectives qui fa\xE7onnent et expliquent notre monde. Mais
+        des fictions collectives qui fa\xE7onnent et expliquent notre monde. \n\nMais
         aujourd\u2019hui, l\u2019humain avec ses fictions d\xE9connect\xE9es du r\xE9el,
-        met en p\xE9ril la vie \xE9volu\xE9e sur Terre et ses avenirs possibles.
-        D\xE8s lors, une question existentielle s\u2019impose \xE0 nous : comment
+        met en p\xE9ril la vie \xE9volu\xE9e sur Terre et ses avenirs possibles.\n
+        \nD\xE8s lors, une question existentielle s\u2019impose \xE0 nous : comment
         pourrions-nous cocr\xE9er de nouvelles fictions qui permettraient de nous
         remettre en symbiose avec le monde r\xE9el ; c'est-\xE0-dire, avec les vivants
         non-humains, les milieux terrestres et extraterrestres ?\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187811959911575890, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187811959911575890, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492008510377847239, guid: 6501480fe1d1aaf41a9257b6fa96eb2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
