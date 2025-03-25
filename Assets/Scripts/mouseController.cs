@@ -35,7 +35,7 @@ public class mouseController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
 
             if(Input.GetMouseButtonDown(1) && !gameState.panelsVisible){
-                gameState.panelSouris.SetActive(false);
+                //gameState.panelSouris.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Debug.Log("Bouton droit cliqué");
                 Cursor.visible = true;
@@ -58,7 +58,7 @@ public class mouseController : MonoBehaviour
                 }
             }
             else if(Input.GetMouseButtonDown(1) && gameState.panelsVisible){
-                gameState.panelSouris.SetActive(false);
+                //gameState.panelSouris.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 cursorLocked = true;

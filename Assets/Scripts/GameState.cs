@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class GameState : MonoBehaviour
     public GameObject Social_Niveau_3;
 
     public GameObject panelGameOverRate;
+    public GameObject panelGameOverSuccess;
     public TextMeshProUGUI raisonGameOver;
     [Serializable]
     public class TextEntry
@@ -70,7 +72,9 @@ public class GameState : MonoBehaviour
     public  int scoreTech = 0;
     public  int scoreSocial = 0;
     public  bool debug = false;
-    public bool scoresUnchanged = false;
+    public bool scoresUnchangedNature = false;
+    public bool scoresUnchangedTech = false;
+    public bool scoresUnchangedSocial = false;
 
     public bool nouvelleEtape;
 
@@ -94,6 +98,16 @@ public class GameState : MonoBehaviour
                 objetTemoin.checkChangementEtat(this.GetNatureLevel());
             }
         }*/
+        // Appuyer sur 'R' pour redémarrer
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartScene();
+        }
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void NextStep()
@@ -114,22 +128,24 @@ public class GameState : MonoBehaviour
     public void avancerEtapeRestart(){
         currentStep++;
         this.panelFondu.FadeToBlackThenFromBlackRestart();
+        this.panelSouris.SetActive(true);
+        RestartScene();
     }
 
     public void lancerGameOver(){
         /*if(currentStep >1){
             this.panelLogs.SetActive(true);
         }*/
-        if(currentStep>1){
+        if(currentStep == 6){
             this.panelSouris.SetActive(false);
         }
         if(currentStep >= 6){
             //this.panelFondu.FadeToBlackThenFromBlack();
-            this.activerGameOver();
             this.panelConsigne.SetActive(false);
             this.panelLogs.SetActive(false);
             this.panelQuestions.SetActive(false);
             this.panelFin.SetActive(true);
+            this.activerGameOver();
         }
     }
     public void UpdateScores(int incrNature, int incrTech, int incrSocial)
@@ -142,16 +158,30 @@ public class GameState : MonoBehaviour
         scoreTech += incrTech;
         scoreSocial += incrSocial;
 
-        if (
-            scoreNature == previousScoreNature
-            && scoreTech == previousScoreTech
-            && scoreSocial == previousScoreSocial
-        ) {
-            scoresUnchanged = true;
-        } else {
-            scoresUnchanged = false;
+        if (scoreNature == previousScoreNature)
+        {
+            scoresUnchangedNature = true;
         }
-
+        else
+        {
+            scoresUnchangedNature = false;
+        }
+        if (scoreTech == previousScoreTech)
+        {
+            scoresUnchangedTech = true;
+        }
+        else
+        {
+            scoresUnchangedTech = false;
+        }
+        if (scoreSocial == previousScoreSocial)
+        {
+            scoresUnchangedSocial = true;
+        }
+        else
+        {
+            scoresUnchangedSocial = false;
+        }
         UpdateDebugDisplay();
     }
 
@@ -203,17 +233,39 @@ public class GameState : MonoBehaviour
 
     string GetNatureMessage()
     {
-        return MessageFromScore(natureMessages, scoreNature);
+        if (scoresUnchangedNature)
+        {
+            return "L’équilibre sensible a juste été maintenu. Ni évolution ni altération notable.";
+        }
+        else
+        {
+            return MessageFromScore(natureMessages, scoreNature);
+        }        
     }
 
     string GetTechMessage()
     {
-        return MessageFromScore(techMessages, scoreTech);
+        if (scoresUnchangedTech)
+        {
+            return "Aucune variation technologique, le système a été maintenu à niveau et reste tel qu’il était.";
+        }
+        else
+        {
+            return MessageFromScore(techMessages, scoreTech);
+        }        
     }
 
     string GetSocialMessage()
     {
-        return MessageFromScore(socialMessages, scoreSocial);
+        if (scoresUnchangedSocial)
+        {
+            return "Les relations à bord se sont maintenues telles qu’elles étaient. Pas d’amélioration, mais au moins pas de tensions accumulées.";
+        }
+        else
+        {
+            return MessageFromScore(socialMessages, scoreSocial);
+        }
+        
     }
 
     void ResetValues()
@@ -243,7 +295,6 @@ public class GameState : MonoBehaviour
             debugText.text = "Info de debug\n\n<size=60%>";
             debugText.text += $"currentStep : {currentStep}\n"
                 + $"\n"
-                + $"scoresUnchanged {scoresUnchanged}\n"
                 + $"\n"
                 + $"Nature : {scoreNature} - {GetNatureLevel()}\n"
                 + $"{GetNatureMessage()}\n\n"
@@ -256,14 +307,10 @@ public class GameState : MonoBehaviour
     }
 
     public void UpdateLogs(){
-        string impactMessage = (
-            scoresUnchanged ?
-            "Vos choix de récits n'ont pas eu d'impact sur l'évolution!" :
-            "Voici l'impact de vos choix de récits :"
-        );
+
+
         this.texteLogs.text = 
             $"\n"
-                + $"{impactMessage}\n\n"
                 + $"<color=#66BB6A>{GetNatureMessage()}</color>\n\n"
                 + $"\n<color=#4FC3F7>{GetTechMessage()}</color>\n\n"
                 + $"\n<color=#C75B5B>{GetSocialMessage()}</color>\n\n"
@@ -306,18 +353,21 @@ public class GameState : MonoBehaviour
         if(this.scoreNature<0 || this.scoreSocial<0 || this.scoreTech<0){
             gameOver = "";
             this.panelGameOverRate.SetActive(true);
+            this.panelGameOverSuccess.SetActive(false);
         }
         else{
+            this.panelGameOverSuccess.SetActive(true);
             this.panelGameOverRate.SetActive(false);
         }
+
         if(this.scoreNature<0){
-            gameOver += gameOverNature;
+            gameOver += $"{gameOverNature}\n\n";
         }
         if(this.scoreSocial<0){
-            gameOver += gameOverSocial;
+            gameOver += $"{gameOverSocial}\n\n";
         }
         if(this.scoreTech < 0){
-            gameOver += gameOverTechno;
+            gameOver += $"{gameOverTechno}\n\n";
         }
         this.raisonGameOver.text = gameOver;
     }

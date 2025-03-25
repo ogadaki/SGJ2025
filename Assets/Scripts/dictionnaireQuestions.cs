@@ -17,7 +17,7 @@ public class dictionnaireQuestions : MonoBehaviour
 
     public static T GetAndRemoveRandom<T>(List<T> list)
     {
-        int index = Random.Range(0, list.Count);
+        int index = Random.Range(0, (list.Count-1));
         T item = list[index];
         list.RemoveAt(index);
         return item;

@@ -67,7 +67,7 @@ public class FonduEnNoir : MonoBehaviour
         yield return new WaitForSeconds(2f);
         foreach(gestionnaireMarqueur objetTemoin in gameState.gestionnaireObjetsTemoins)
         {
-                objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
+                //objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
         gameState.UpdateLogs();
         gameState.UpdateVaisseau();
@@ -104,12 +104,12 @@ public class FonduEnNoir : MonoBehaviour
         yield return new WaitForSeconds(2f);
         foreach(gestionnaireMarqueur objetTemoin in gameState.gestionnaireObjetsTemoins)
         {
-                objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
+                //objetTemoin.checkChangementEtat(gameState.GetNatureLevel());
         }
         gameState.UpdateLogs();
         gameState.UpdateVaisseau();
         gameState.activerSons();
-        this.gameState.panelSouris.SetActive(true);
+        //this.gameState.panelSouris.SetActive(true);
         FadeFromBlack();
     }
 
